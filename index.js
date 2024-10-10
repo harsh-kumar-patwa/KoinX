@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 require('dotenv').config();
+// require('./src/jobs/cronJob');
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log('Database Connected'))

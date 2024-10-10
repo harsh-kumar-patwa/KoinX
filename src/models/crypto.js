@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const crypto = new mongoose.Schema({
+const Crypto = new mongoose.Schema({
     coin:String,
     price:Number,
     marketCap: Number,
@@ -12,4 +12,4 @@ const crypto = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('crypto', crypto);
+module.exports = mongoose.model('crypto', Crypto);
