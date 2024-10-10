@@ -18,6 +18,7 @@ const fetchCryptoData = async (coin) => {
         const response = await axios.request(options);
         const data = response.data[coin];
         return {
+            coin: coin,
             price: data.usd,
             marketCap: data.usd_market_cap,
             change24h: data.usd_24h_change
