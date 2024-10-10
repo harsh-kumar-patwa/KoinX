@@ -5,13 +5,13 @@ const fetchCryptoData = async (coin) => {
         method: 'GET',
         url: 'https://api.coingecko.com/api/v3/simple/price',
         params: {
-            x_cg_demo_api_key:process.env.x_cg_demo_api_key,
+            x_cg_demo_api_key: process.env.x_cg_demo_api_key,
             ids: coin,
             vs_currencies: 'usd',
             include_market_cap: 'true',
             include_24hr_change: 'true'
         },
-        headers: {accept:'application/json' }
+        headers: { accept: 'application/json' }
     };
 
     try {
@@ -24,7 +24,7 @@ const fetchCryptoData = async (coin) => {
         };
     } catch (error) {
         console.error('Error fetching crypto data:', error);
-        throw error; 
+        throw error;
     }
 };
 
