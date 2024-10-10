@@ -21,7 +21,7 @@ const fetchAndStoreData = async () => {
         const bitcoinData = await fetchCryptoData('bitcoin');
         const maticData = await fetchCryptoData('matic-network');
         const ethereumData = await fetchCryptoData('ethereum');
-        
+
         await Crypto.create([bitcoinData, maticData, ethereumData]);
         console.log('Data fetched and stored:', { bitcoinData, maticData, ethereumData });
     } catch (error) {
@@ -32,6 +32,6 @@ const fetchAndStoreData = async () => {
 fetchAndStoreData();
 cron.schedule('0 */2 * * *', fetchAndStoreData);
 
-app.use('/api', statsRoute);
-app.use('/api', deviationRoute);
+app.use('/', statsRoute);
+app.use('/', deviationRoute);
 app.listen(PORT, () => console.log('Server running on port 3000'));
