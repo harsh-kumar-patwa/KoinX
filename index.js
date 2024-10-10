@@ -9,7 +9,7 @@ require('./src/jobs/cronJob');
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Database Connected'))
-    .catch(err => console.log(err));
+    .catch(err => console.log('Database connection error:', err));
 
 app.use('/api', statsRoute);
 app.use('/api', deviationRoute);
